@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
+
+  <View
+    android:id="@+id/view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="R:"
+      android:textColor="@android:color/holo_red_dark"
+      android:textSize="24sp" />
+
+    <SeekBar
+      android:id="@+id/seekBarR"
+      android:layout_width="200dp"
+      android:layout_height="match_parent"
+      android:progress="50" />
+
+    <TextView
+      android:id="@+id/Rvalue"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:text="Rvalue"
+      android:textColor="@android:color/holo_red_dark"
+      android:textSize="24sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/linearLayout">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="G:"
+      android:textColor="@android:color/holo_green_dark"
+      android:textSize="24sp" />
+
+    <SeekBar
+      android:id="@+id/seekBarG"
+      android:layout_width="200dp"
+      android:layout_height="match_parent"
+      android:progress="50" />
+
+    <TextView
+      android:id="@+id/Gvalue"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:text="Gvalue"
+      android:textColor="@android:color/holo_green_dark"
+      android:textSize="24sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="B:"
+      android:textColor="@android:color/holo_blue_dark"
+      android:textSize="24sp" />
+
+    <SeekBar
+      android:id="@+id/seekBarB"
+      android:layout_width="200dp"
+      android:layout_height="match_parent"
+      android:progress="50" />
+
+    <TextView
+      android:id="@+id/Bvalue"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:text="Rvalue"
+      android:textColor="@android:color/holo_blue_dark"
+      android:textSize="24sp" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

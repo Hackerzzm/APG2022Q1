@@ -2,10 +2,11 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
 }
+
 android {
   compileSdk 32
   defaultConfig {
-    applicationId "com.zzm.roomdb"
+    applicationId "com.zzm.rgbtest"
     minSdk 21
     targetSdk 32
     versionCode 1
@@ -25,11 +26,12 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+  buildFeatures {
+    viewBinding true
+  }
 }
+
 dependencies {
-  def room_version = "2.4.0"
-  implementation "androidx.room:room-runtime:$room_version"
-  annotationProcessor "androidx.room:room-compiler:$room_version"
   implementation 'androidx.core:core-ktx:1.7.0'
   implementation 'androidx.appcompat:appcompat:1.4.0'
   implementation 'com.google.android.material:material:1.4.0'
