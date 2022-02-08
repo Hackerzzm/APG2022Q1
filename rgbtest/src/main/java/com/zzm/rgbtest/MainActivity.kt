@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import com.zzm.rgbtest.databinding.ActivityMainBinding
+import android.os.Build
+import android.os.Build.VERSION
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
@@ -68,6 +71,17 @@ class MainActivity : AppCompatActivity() {
     val bRalue = (binding.seekBarB.progress / 100.0 * 255).toInt()
     binding.Bvalue.text = "$bRalue(${intToHex(bRalue)})"
     updateViewBackground()
+    hideBottomUIMenu()
+  }
+
+  /**
+   * 隐藏虚拟按键，并且全屏
+   */
+  protected fun hideBottomUIMenu() {
+    val decorView: View = window.decorView
+    val uiOptions: Int = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_FULLSCREEN)
+    decorView.systemUiVisibility = uiOptions
   }
 
   private fun updateViewBackground(){

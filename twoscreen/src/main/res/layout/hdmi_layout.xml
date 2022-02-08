@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+
+  android:background="@android:color/holo_green_dark"
+  android:gravity="center">
+
+  <!--<TextView
+      android:id="@+id/hdmi_text"
+      android:textSize="60sp"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="HDMI SCREEN" />
+
+  <Button
+      android:id="@+id/hdmi_bu"
+  android:layout_below="@+id/hdmi_text"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="BUTTON" />-->
+  <ImageView
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="8dp"
+    android:id="@+id/iv"
+    android:scaleType="fitXY"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</RelativeLayout>

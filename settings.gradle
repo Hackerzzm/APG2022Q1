@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "APG2022Q1"
 include ':roomdb'
 include ':rgbtest'
+include ':twoscreen'
