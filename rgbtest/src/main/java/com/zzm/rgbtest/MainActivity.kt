@@ -1,14 +1,14 @@
 package com.zzm.rgbtest
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
+import android.view.WindowManager.LayoutParams
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
+import androidx.appcompat.app.AppCompatActivity
 import com.zzm.rgbtest.databinding.ActivityMainBinding
-import android.os.Build
-import android.os.Build.VERSION
-import android.view.View
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     val view = binding.root
     setContentView(view)
+
     initViews()
     initEvent()
   }
@@ -64,6 +65,17 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun initViews() {
+    /*window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN)
+    window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+    val attrs = window.attributes
+    attrs.flags = attrs.flags and LayoutParams.FLAG_FULLSCREEN.inv()
+    window.attributes = attrs*/
+//    https://blog.csdn.net/qq_34681580/article/details/103955191
+    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+    //注意要清除 FLAG_TRANSLUCENT_STATUS flag
+    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+    window.statusBarColor = resources.getColor(R.color.colorPrimary)
+
     val rRalue = (binding.seekBarR.progress / 100.0 * 255).toInt()
     binding.Rvalue.text = "$rRalue(${intToHex(rRalue)})"
     val gRalue = (binding.seekBarG.progress / 100.0 * 255).toInt()
